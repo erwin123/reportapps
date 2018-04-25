@@ -1,0 +1,29 @@
+
+<div class="card">
+    <div *ngIf="traffic" class="progress loop" style="font-size: 1px;"><progress></progress></div>
+    <div class="card-header">
+        {{objectGauge}}
+    </div>
+    <div class="card-block">
+        
+        <div class="row">
+            <div class="col-xs">
+                <ngx-charts-gauge
+                [view]="view"
+                [scheme]="colorScheme"
+                [results]="data"
+                [min]="0"
+                [max]="100"
+                [angleSpan]="240"
+                [startAngle]="-120"
+                [units]="'Percent'"
+                [bigSegments]="10"
+                [smallSegments]="5">
+                </ngx-charts-gauge>
+            </div>
+        </div>
+      </div>
+    <div class="card-footer">
+        <button class="btn btn-sm btn-link" (click)="onReload()">Reload</button>
+    </div>
+</div>

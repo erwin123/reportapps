@@ -1,0 +1,57 @@
+<clr-vertical-nav [clrVerticalNavCollapsible]="true" [(clrVerticalNavCollapsed)]="collapsed">
+    <div *ngIf="traffic" class="progress loop" style="font-size: 0.5px;"><progress></progress></div>
+    <clr-vertical-nav-group  routerLinkActive="active">
+        <clr-icon clrVerticalNavIcon shape="building" class="is-solid"></clr-icon>
+        Branch
+        <clr-vertical-nav-group-children *clrIfExpanded="false">
+
+            <clr-tree-node [(clrSelected)]="selectedAllBranch" (click)="onBranchClick()">
+                    SEMUA CABANG
+                    <ng-template [clrIfExpanded]="true">
+                        <clr-tree-node *ngFor="let objbranch of branch" [(clrSelected)]="objbranch.selected">
+                            {{objbranch.type}}
+                            <ng-template [(clrIfExpanded)]="objbranch.expanded">
+                                <clr-tree-node *ngFor="let objright of objbranch.rights" [(clrSelected)]="objright.selected">
+                                    {{objright.name}}
+                                </clr-tree-node>
+                            </ng-template>
+                        </clr-tree-node>
+                    </ng-template>
+            </clr-tree-node>
+
+        </clr-vertical-nav-group-children>
+    </clr-vertical-nav-group>
+    <clr-vertical-nav-group  routerLinkActive="active">
+        <clr-icon clrVerticalNavIcon shape="blocks-group" class="is-solid"></clr-icon>
+        Year
+        <clr-vertical-nav-group-children *clrIfExpanded="false">
+            <div class="select">
+                <select [value]="this.selectedYear" (change)="onYearChange($event.target.value)">
+                    <option *ngFor="let year of year">{{year}}</option>
+                </select>
+            </div>
+        </clr-vertical-nav-group-children>
+    </clr-vertical-nav-group>
+    <clr-vertical-nav-group  routerLinkActive="active">
+            <clr-icon clrVerticalNavIcon shape="bolt"></clr-icon>
+            Month
+            <clr-vertical-nav-group-children *clrIfExpanded="false">
+
+                <clr-tree-node [(clrSelected)]="selectedAllMonth" (click)="onMonthClick()">
+                    SEMUA BULAN
+                    <ng-template [clrIfExpanded]="true">
+                            <clr-tree-node *ngFor="let objmonth of month" [(clrSelected)]="objmonth.selected">
+                                {{objmonth.name}}
+                            </clr-tree-node>
+                    </ng-template>
+                </clr-tree-node>
+                
+            </clr-vertical-nav-group-children>
+    </clr-vertical-nav-group>
+    <!-- <a clrVerticalNavLink routerLink="./electric" routerLinkActive="active">
+        <clr-icon clrVerticalNavIcon shape="synch"></clr-icon>
+        Reset
+    </a> -->
+    
+    
+</clr-vertical-nav>

@@ -1,0 +1,9 @@
+header *{
+    color:#003665 !important;
+}
+header{
+    background:linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 60%, #c41111 60%,#c41111 75%, #fff 75%, rgba(255,255,255,1) 78%, rgb(255, 217, 0) 78%, rgb(255, 217, 0) 80%, #003665 80%, #003665 100%);
+    opacity: 0.9;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); 
+    
+}

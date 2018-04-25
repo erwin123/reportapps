@@ -1,0 +1,29 @@
+<div class="content-container">
+  <div class="content-area">
+      <div class="row">
+          <!-- <div  *ngFor="let cardObj of datacardload" class="col-lg-4 col-xl-4">
+              <app-chartgauge [objectGauge]="cardObj.name"></app-chartgauge>
+          </div> -->
+          <div class="col-lg-12 col-xl-12">
+            <app-chartmonthly [objMonth]="'Monthly Usage'"></app-chartmonthly>
+         </div>
+          <div class="col-lg-4 col-xl-4">
+              <app-chartgauge [objectGauge]="'ACQ'"></app-chartgauge>
+          </div>
+          <div class="col-lg-4 col-xl-4">
+              <app-chartgauge [objectGauge]="'MUF Survey'"></app-chartgauge>
+          </div>
+          <div class="col-lg-4 col-xl-4">
+              <app-chartgauge [objectGauge]="'MUFON'"></app-chartgauge>
+          </div>
+          <div class="col-lg-6 col-xl-6">
+                <app-chartline [objectLine]="'ACQ'"></app-chartline>
+            </div>
+            <div class="col-lg-6 col-xl-6">
+                <app-chartline [objectLine]="'MUF Survey'"></app-chartline>
+            </div> 
+            
+      </div>
+  </div>
+  <app-sidemenu class="clr-vertical-nav"></app-sidemenu>
+</div>
